@@ -82,10 +82,8 @@ class Animation(object):
                 CHANNELRED      = data[base_offset * 4]
                 CHANNELGREEN    = data[base_offset * 4 + 1]
                 CHANNELBLUE     = data[base_offset * 4 + 2]
-                if (CHANNELRED + CHANNELGREEN + CHANNELBLUE == 0):
-                    CHANNELALPHA = 0
-                else:
-                    CHANNELALPHA    = data[base_offset * 4 + 3]
+                CHANNELALPHA = data[base_offset * 4 + 3]
+                if CHANNELALPHA > 0:
                     frame.set_at((x + cel.x_pos, y + cel.y_pos), pygame.Color(CHANNELRED, CHANNELGREEN, CHANNELBLUE, CHANNELALPHA))
                 
                 
