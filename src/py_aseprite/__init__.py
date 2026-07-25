@@ -81,7 +81,8 @@ class AsepriteFile(object):
                 elif chunk.chunk_type == 0x2022:
                     frame.chunks.append(SliceChunk(data, data_offset))
                 else:
-                    print("Skipped 0x{:04x}".format(chunk.chunk_type))
+                    pass
+                    # print("Skipped 0x{:04x}".format(chunk.chunk_type))
 
                 data_offset += chunk.chunk_size
 
